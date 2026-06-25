@@ -1,0 +1,16 @@
+.about {
+  max-width: 52rem;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.about p {
+  color: rgba(228, 219, 252, 0.82);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.about p:first-child {
+  font-size: 1.2rem;
+  color: #f3e8ff;
+}

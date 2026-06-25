@@ -1,0 +1,19 @@
+<div class="lava" aria-hidden="true">
+  <div class="lava__field">
+    @for (blob of blobs; track blob) {
+      <span class="lava__blob" [style.--i]="blob"></span>
+    }
+  </div>
+  <div class="lava__glow"></div>
+</div>
+
+<svg class="lava__goo" aria-hidden="true">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur" />
+      <feColorMatrix in="blur" mode="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </defs>
+</svg>

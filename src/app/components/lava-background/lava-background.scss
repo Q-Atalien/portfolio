@@ -1,0 +1,80 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  display: block;
+  background:
+    radial-gradient(120% 90% at 20% 0%, #1d0f3a 0%, transparent 55%),
+    radial-gradient(120% 90% at 90% 100%, #260f44 0%, transparent 55%),
+    linear-gradient(160deg, #0c0717 0%, #0a0514 100%);
+}
+
+.lava {
+  position: absolute;
+  inset: 0;
+}
+
+.lava__field {
+  position: absolute;
+  inset: -8% 0 -8% 0;
+  filter: url(#goo);
+}
+
+.lava__blob {
+  position: absolute;
+  bottom: -28%;
+  width: clamp(140px, 22vw, 320px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #c4b5fd 0%, #a855f7 32%, #7c3aed 62%, #5b21b6 100%);
+  opacity: 0.85;
+  left: calc(var(--i) * 14% + 4%);
+  animation: rise calc(16s + var(--i) * 3s) ease-in-out infinite;
+  animation-delay: calc(var(--i) * -3.4s);
+}
+
+.lava__blob:nth-child(even) {
+  background: radial-gradient(circle at 40% 35%, #f0abfc 0%, #d946ef 30%, #9333ea 65%, #6b21a8 100%);
+  width: clamp(110px, 16vw, 240px);
+}
+
+.lava__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 50% at 50% 110%, rgba(168, 85, 247, 0.35), transparent 70%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.lava__goo {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.9);
+  }
+  30% {
+    transform: translateY(-55vh) translateX(6%) scale(1.1);
+  }
+  55% {
+    transform: translateY(-95vh) translateX(-4%) scale(1);
+  }
+  80% {
+    transform: translateY(-130vh) translateX(5%) scale(1.15);
+  }
+  100% {
+    transform: translateY(-170vh) translateX(0) scale(0.85);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lava__blob {
+    animation: none;
+    bottom: auto;
+    top: calc(var(--i) * 12%);
+  }
+}

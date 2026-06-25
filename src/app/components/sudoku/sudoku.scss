@@ -1,0 +1,138 @@
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.game__board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+  padding: 10px;
+  border-radius: 1rem;
+  background: rgba(12, 7, 23, 0.6);
+  border: 2px solid rgba(192, 132, 252, 0.4);
+  box-shadow: 0 26px 60px -30px rgba(168, 85, 247, 0.8);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.game__board--solved {
+  border-color: #f0abfc;
+  box-shadow: 0 0 50px -8px rgba(240, 171, 252, 0.75);
+}
+
+.cell {
+  width: clamp(42px, 11vw, 58px);
+  height: clamp(42px, 11vw, 58px);
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #f3e8ff;
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 6px;
+  background: rgba(40, 24, 66, 0.45);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.cell:hover {
+  background: rgba(88, 48, 140, 0.5);
+}
+
+.cell--fixed {
+  color: #c4b5fd;
+  background: rgba(20, 12, 38, 0.65);
+  cursor: default;
+}
+
+.cell--selected {
+  background: rgba(217, 70, 239, 0.32);
+  outline: 2px solid #f0abfc;
+}
+
+.cell--conflict {
+  color: #fecaca;
+  background: rgba(190, 40, 70, 0.4);
+}
+
+.cell--edge-right {
+  margin-right: 4px;
+}
+
+.cell--edge-bottom {
+  margin-bottom: 4px;
+}
+
+.game__side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 18rem;
+}
+
+.game__status {
+  color: rgba(228, 219, 252, 0.82);
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.game__status--win {
+  color: #f0abfc;
+  font-weight: 600;
+}
+
+.game__pad {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+}
+
+.pad {
+  aspect-ratio: 1;
+  border-radius: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f3e8ff;
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  background: rgba(40, 24, 66, 0.55);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.pad:hover {
+  background: rgba(168, 85, 247, 0.4);
+  transform: translateY(-2px);
+}
+
+.game__controls {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.ctrl {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #f3e8ff;
+  border: 1px solid rgba(192, 132, 252, 0.45);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.ctrl:hover {
+  background: rgba(168, 85, 247, 0.18);
+}
+
+.ctrl--primary {
+  border: none;
+  background: linear-gradient(135deg, #a855f7, #d946ef);
+}
+
+.game__hint {
+  font-size: 0.88rem;
+  color: rgba(228, 219, 252, 0.55);
+}

@@ -1,0 +1,64 @@
+.footer {
+  margin-top: 5rem;
+  padding: 4rem clamp(1.2rem, 6vw, 6rem) 3rem;
+  border-top: 1px solid rgba(168, 85, 247, 0.2);
+  text-align: center;
+}
+
+.footer__cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 0.8rem;
+  background: linear-gradient(120deg, #ffffff, #f0abfc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer__cta p {
+  color: rgba(228, 219, 252, 0.78);
+  max-width: 34rem;
+  margin: 0 auto 1.8rem;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer__links a {
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #f3e8ff;
+  border: 1px solid rgba(192, 132, 252, 0.5);
+  transition: background 0.2s ease;
+}
+
+.footer__links a:hover {
+  background: rgba(168, 85, 247, 0.18);
+}
+
+.footer__primary {
+  border: none !important;
+  background: linear-gradient(135deg, #a855f7, #d946ef);
+  box-shadow: 0 14px 40px -14px rgba(217, 70, 239, 0.7);
+}
+
+.footer__mail {
+  display: inline-block;
+  margin-top: 1.4rem;
+  color: rgba(228, 219, 252, 0.7);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(192, 132, 252, 0.4);
+}
+
+.footer__mail:hover {
+  color: #f0abfc;
+}
+
+.footer__copy {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: rgba(228, 219, 252, 0.45);
+}

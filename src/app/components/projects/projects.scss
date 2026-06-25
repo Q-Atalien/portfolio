@@ -1,0 +1,90 @@
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-height: 11rem;
+  padding: 1.5rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  background: rgba(26, 16, 46, 0.55);
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(217, 70, 239, 0.55);
+  box-shadow: 0 22px 50px -28px rgba(217, 70, 239, 0.7);
+}
+
+.card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.card__top h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #f3e8ff;
+}
+
+.card__stars {
+  font-size: 0.85rem;
+  color: #f0abfc;
+  white-space: nowrap;
+}
+
+.card__desc {
+  margin: 0;
+  color: rgba(228, 219, 252, 0.74);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.card__lang {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #d8b4fe;
+}
+
+.card__open {
+  color: rgba(228, 219, 252, 0.6);
+}
+
+.card--skeleton {
+  background: linear-gradient(100deg, rgba(40, 24, 66, 0.5) 30%, rgba(74, 40, 110, 0.6) 50%, rgba(40, 24, 66, 0.5) 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.projects__empty {
+  color: rgba(228, 219, 252, 0.8);
+}
+
+.projects__empty a {
+  color: #f0abfc;
+  text-decoration: underline;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}

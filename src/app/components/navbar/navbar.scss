@@ -1,0 +1,74 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem clamp(1.2rem, 5vw, 4rem);
+  backdrop-filter: blur(14px);
+  background: rgba(12, 7, 23, 0.55);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.18);
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.nav__mark {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.8rem;
+  font-size: 0.85rem;
+  background: linear-gradient(135deg, #a855f7, #d946ef);
+  color: #fff;
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.55);
+}
+
+.nav__links {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 0.95rem;
+}
+
+.nav__links a,
+.nav__social a {
+  color: rgba(237, 230, 255, 0.78);
+  transition: color 0.2s ease;
+}
+
+.nav__links a:hover,
+.nav__social a:hover {
+  color: #fff;
+}
+
+.nav__social {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.nav__cta {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(192, 132, 252, 0.5);
+  color: #fff !important;
+}
+
+.nav__cta:hover {
+  background: rgba(168, 85, 247, 0.18);
+}
+
+@media (max-width: 760px) {
+  .nav__links {
+    display: none;
+  }
+}

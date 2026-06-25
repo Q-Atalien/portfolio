@@ -1,0 +1,20 @@
+<section class="hero" id="top">
+  <p class="hero__eyebrow">Olá, eu sou a Atauine 👋</p>
+  <h1 class="hero__title">
+    {{ profile.role }}
+  </h1>
+  <p class="hero__lead">{{ profile.tagline }}</p>
+
+  <div class="hero__actions">
+    <a class="btn btn--solid" href="#projetos">Ver projetos</a>
+    <a class="btn btn--ghost" [href]="'mailto:' + profile.email">Entrar em contato</a>
+  </div>
+
+  <div class="hero__stack">
+    <span>.NET</span>
+    <span>Angular</span>
+    <span>React</span>
+    <span>SQL Server</span>
+    <span>Oracle</span>
+  </div>
+</section>

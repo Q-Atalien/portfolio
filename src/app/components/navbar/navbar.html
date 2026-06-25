@@ -1,0 +1,19 @@
+<header class="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__mark">{{ initials }}</span>
+    <span class="nav__name">Atauine Dias</span>
+  </a>
+
+  <nav class="nav__links">
+    <a href="#sobre">Sobre</a>
+    <a href="#skills">Skills</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#sudoku">Sudoku</a>
+  </nav>
+
+  <div class="nav__social">
+    <a [href]="profile.github" target="_blank" rel="noreferrer">GitHub</a>
+    <a [href]="profile.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+    <a class="nav__cta" [href]="'mailto:' + profile.email">Contato</a>
+  </div>
+</header>

@@ -1,0 +1,46 @@
+<section class="section" id="sudoku">
+  <header class="section__head">
+    <span class="section__index">04</span>
+    <h2 class="section__title">Mini Sudoku</h2>
+    <span class="section__link">Um intervalo enquanto você decide me chamar :)</span>
+  </header>
+
+  <div class="game">
+    <div class="game__board" [class.game__board--solved]="solved()">
+      @for (row of cells(); track $index; let r = $index) {
+        @for (value of row; track $index; let c = $index) {
+          <button
+            type="button"
+            class="cell"
+            [class.cell--fixed]="isFixed(r, c)"
+            [class.cell--selected]="isSelected(r, c)"
+            [class.cell--conflict]="hasConflict(r, c)"
+            [class.cell--edge-right]="thickRight(c)"
+            [class.cell--edge-bottom]="thickBottom(r)"
+            (click)="select(r, c)">
+            {{ value || '' }}
+          </button>
+        }
+      }
+    </div>
+
+    <div class="game__side">
+      <p class="game__status" [class.game__status--win]="solved()">
+        {{ solved() ? 'Resolvido! 🎉' : 'Preencha de 1 a ' + size + ' sem repetir na linha, coluna e bloco.' }}
+      </p>
+
+      <div class="game__pad">
+        @for (number of numbers; track number) {
+          <button type="button" class="pad" (click)="place(number)">{{ number }}</button>
+        }
+      </div>
+
+      <div class="game__controls">
+        <button type="button" class="ctrl" (click)="erase()">Apagar</button>
+        <button type="button" class="ctrl ctrl--primary" (click)="newGame()">Novo jogo</button>
+      </div>
+
+      <p class="game__hint">Dica: selecione uma célula e use o teclado (1–{{ size }}).</p>
+    </div>
+  </div>
+</section>

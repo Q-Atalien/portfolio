@@ -1,0 +1,40 @@
+<section class="section" id="projetos">
+  <header class="section__head">
+    <span class="section__index">03</span>
+    <h2 class="section__title">Projetos</h2>
+    <a class="section__link" [href]="profile.github" target="_blank" rel="noreferrer">Ver tudo no GitHub →</a>
+  </header>
+
+  @if (loading()) {
+    <div class="projects">
+      @for (placeholder of [1, 2, 3]; track placeholder) {
+        <div class="card card--skeleton"></div>
+      }
+    </div>
+  } @else if (empty()) {
+    <p class="projects__empty">
+      Não consegui carregar os repositórios agora. Dá uma olhada direto no
+      <a [href]="profile.github" target="_blank" rel="noreferrer">meu GitHub</a>.
+    </p>
+  } @else {
+    <div class="projects">
+      @for (repo of repos(); track repo.id) {
+        <a class="card" [href]="repo.html_url" target="_blank" rel="noreferrer">
+          <div class="card__top">
+            <h3>{{ prettyName(repo.name) }}</h3>
+            @if (repo.stargazers_count > 0) {
+              <span class="card__stars">★ {{ repo.stargazers_count }}</span>
+            }
+          </div>
+          <p class="card__desc">{{ repo.description || 'Repositório de código e experimentos.' }}</p>
+          <div class="card__foot">
+            @if (repo.language) {
+              <span class="card__lang">{{ repo.language }}</span>
+            }
+            <span class="card__open">Abrir →</span>
+          </div>
+        </a>
+      }
+    </div>
+  }
+</section>

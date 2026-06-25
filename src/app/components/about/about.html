@@ -1,0 +1,12 @@
+<section class="section" id="sobre">
+  <header class="section__head">
+    <span class="section__index">01</span>
+    <h2 class="section__title">Sobre mim</h2>
+  </header>
+
+  <div class="about">
+    @for (paragraph of profile.about; track paragraph) {
+      <p>{{ paragraph }}</p>
+    }
+  </div>
+</section>

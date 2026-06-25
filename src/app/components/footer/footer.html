@@ -1,0 +1,13 @@
+<footer class="footer">
+  <div class="footer__cta">
+    <h2>Vamos construir algo juntos?</h2>
+    <p>Estou aberta a novas oportunidades e parcerias em desenvolvimento full stack.</p>
+    <div class="footer__links">
+      <a class="footer__primary" [href]="'mailto:' + profile.email">Enviar e-mail</a>
+      <a [href]="profile.github" target="_blank" rel="noreferrer">GitHub</a>
+      <a [href]="profile.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+    </div>
+    <a class="footer__mail" [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+  </div>
+  <p class="footer__copy">© {{ year }} {{ profile.name }}</p>
+</footer>
