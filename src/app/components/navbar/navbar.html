@@ -1,5 +1,5 @@
 <header class="nav">
-  <a class="nav__brand" href="#top">
+  <a class="nav__brand" href="#top" (click)="closeMenu()">
     <span class="nav__mark">{{ initials }}</span>
     <span class="nav__name">Atauine Dias</span>
   </a>
@@ -17,4 +17,32 @@
     <a [href]="profile.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
     <a class="nav__cta" [href]="'mailto:' + profile.email">Contato</a>
   </div>
+
+  <button
+    type="button"
+    class="nav__toggle"
+    [class.nav__toggle--open]="menuOpen()"
+    [attr.aria-expanded]="menuOpen()"
+    aria-label="Abrir menu"
+    (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
+
+@if (menuOpen()) {
+  <nav class="nav__mobile">
+    <a href="#sobre" (click)="closeMenu()">Sobre</a>
+    <a href="#experiencia" (click)="closeMenu()">Experiência</a>
+    <a href="#skills" (click)="closeMenu()">Skills</a>
+    <a href="#projetos" (click)="closeMenu()">Projetos</a>
+    <a href="#sudoku" (click)="closeMenu()">Sudoku</a>
+
+    <div class="nav__mobile-social">
+      <a [href]="profile.github" target="_blank" rel="noreferrer" (click)="closeMenu()">GitHub</a>
+      <a [href]="profile.linkedin" target="_blank" rel="noreferrer" (click)="closeMenu()">LinkedIn</a>
+      <a class="nav__cta" [href]="'mailto:' + profile.email" (click)="closeMenu()">Contato</a>
+    </div>
+  </nav>
+}

@@ -136,3 +136,15 @@
   font-size: 0.88rem;
   color: rgba(228, 219, 252, 0.55);
 }
+
+@media (max-width: 640px) {
+  .game {
+    gap: 1.6rem;
+    justify-content: center;
+  }
+
+  .game__side {
+    max-width: 100%;
+    width: 100%;
+  }
+}

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { profile } from '../../core/profile';
 
 @Component({
@@ -14,4 +14,14 @@ export class Navbar {
     .filter((_, i, all) => i === 0 || i === all.length - 1)
     .map((part) => part[0])
     .join('');
+
+  readonly menuOpen = signal(false);
+
+  toggleMenu() {
+    this.menuOpen.update((open) => !open);
+  }
+
+  closeMenu() {
+    this.menuOpen.set(false);
+  }
 }
