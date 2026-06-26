@@ -1,0 +1,31 @@
+<section class="section" id="experiencia">
+  <header class="section__head">
+    <span class="section__index">02</span>
+    <h2 class="section__title">Experiência Profissional</h2>
+  </header>
+
+  <div class="timeline">
+    @for (item of items; track item.company + item.period) {
+      <article class="timeline__item">
+        <div class="timeline__head">
+          <h3 class="timeline__role">{{ item.role }}</h3>
+          <span class="timeline__company">{{ item.company }} · {{ item.type }}</span>
+          <span class="timeline__meta">{{ item.period }} · {{ item.duration }}</span>
+          <span class="timeline__meta">{{ item.location }}</span>
+        </div>
+
+        <ul class="timeline__highlights">
+          @for (line of item.highlights; track line) {
+            <li>{{ line }}</li>
+          }
+        </ul>
+
+        <ul class="timeline__stack">
+          @for (tech of item.stack; track tech) {
+            <li>{{ tech }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>

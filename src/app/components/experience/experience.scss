@@ -1,0 +1,87 @@
+.timeline {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.timeline__item {
+  padding: 1.5rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  background: rgba(26, 16, 46, 0.55);
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.timeline__item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(217, 70, 239, 0.5);
+}
+
+.timeline__head {
+  margin-bottom: 1.1rem;
+}
+
+.timeline__role {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f5edff;
+}
+
+.timeline__company {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #e9d5ff;
+}
+
+.timeline__meta {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  color: rgba(228, 219, 252, 0.6);
+}
+
+.timeline__highlights {
+  list-style: none;
+  margin: 0 0 1.1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.timeline__highlights li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: rgba(228, 219, 252, 0.82);
+  line-height: 1.55;
+}
+
+.timeline__highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c084fc, #f0abfc);
+}
+
+.timeline__stack {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.timeline__stack li {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: #e9d5ff;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  background: rgba(168, 85, 247, 0.12);
+}
